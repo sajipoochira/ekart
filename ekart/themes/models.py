@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+# Site Settings
+
+class SiteSettings(models.Model):
+    banner = models.ImageField(upload_to="media/site/")
+    caption = models.TextField()
+
