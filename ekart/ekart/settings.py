@@ -16,6 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-c&tby8--%8#7kc$5_eu!qlg9@@edil!8c)s4p3#^w7sfd6a6#0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lab-kart.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
@@ -110,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Qatar'
 
 USE_I18N = True
 
@@ -120,11 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'cart/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [
-    BASE_DIR / 'static/',
+   BASE_DIR / 'static/',
 ]
-
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 
@@ -132,3 +133,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+print(STATICFILES_DIRS)
