@@ -81,8 +81,15 @@ WSGI_APPLICATION = 'ekart.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.cosmosdb',
+        'NAME': 'kart-db-cosmos',
+        'USER': 'kart-db-cosmos',
+        'PASSWORD': 'qREEsGcIz5bWSA5PxqJb07gnSffQ678JRyaXHoSXAUHUSKEdawIPUylKXWGKjofeghZQxDb0kY8PACDbsMrfrg==',
+        'HOST': 'kart-db-cosmos.mongo.cosmos.azure.com',
+        'OPTIONS': {
+            'max_connection_limit': 100,
+            'connection_retry_interval': 5,
+        },
     }
 }
 
