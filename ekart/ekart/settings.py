@@ -16,7 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-print(BASE_DIR)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -81,15 +81,13 @@ WSGI_APPLICATION = 'ekart.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.cosmosdb',
-        'NAME': 'kart-db-cosmos',
-        'USER': 'kart-db-cosmos',
-        'PASSWORD': 'qREEsGcIz5bWSA5PxqJb07gnSffQ678JRyaXHoSXAUHUSKEdawIPUylKXWGKjofeghZQxDb0kY8PACDbsMrfrg==',
-        'HOST': 'kart-db-cosmos.mongo.cosmos.azure.com',
-        'OPTIONS': {
-            'max_connection_limit': 100,
-            'connection_retry_interval': 5,
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': 'db',
+        'PORT': 5432, #default port you don't need to mention in docker-compose
+     
     }
 }
 
@@ -140,4 +138,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-print(STATICFILES_DIRS)
