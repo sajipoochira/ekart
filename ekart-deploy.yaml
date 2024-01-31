@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ekart-app
+  
+spec:
+  selector:
+    matchLabels:
+      app: ekart-bakend
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: ekart-bakend
+    spec:
+      containers:
+      - name: ekart
+        image: sajlabrap.azurecr.io/ekart:latest
+        env:
+        - name: POSTGRES_NAME
+          value: postgres
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        - name: DJANGO_SUPERUSER_PASSWORD
+          value: password
+        - name: POSTGRES_HOST
+          value: $(EKART-DB-IP_SERVICE_HOST)
+        ports:
+        - containerPort: 8000
+          
+      

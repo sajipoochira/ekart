@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ekart
+spec:
+  containers:
+  - name: ekart
+    image: sajlabrap.azurecr.io/ekart:latest
+    env:
+      - name: POSTGRES_NAME
+        value: postgres
+      - name: POSTGRES_USER
+        value: postgres
+      - name: POSTGRES_PASSWORD
+        value: postgres
+      - name: DJANGO_SUPERUSER_PASSWORD
+        value: password
+    ports:
+    - containerPort: 8000
+      hostPort: 5000
+  - name: postgres
+    image: postgres
+    env:
+     - name: POSTGRES_USER
+       value: postgres    
+     - name: POSTGRES_DB
+       value: postgres
+     - name: POSTGRES_PASSWORD
+       value: postgres
+    ports:
+    - containerPort: 5432
