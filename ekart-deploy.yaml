@@ -16,6 +16,9 @@ spec:
       containers:
       - name: ekart
         image: sajlabrap.azurecr.io/ekart:latest
+        volumeMounts:
+          - mountPath: /app
+            name: ekart
         env:
         - name: POSTGRES_NAME
           value: postgres
@@ -29,5 +32,5 @@ spec:
           value: $(EKART-DB-IP_SERVICE_HOST)
         ports:
         - containerPort: 8000
-          
-      
+      volumes:
+        - name: ekart    

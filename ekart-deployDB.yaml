@@ -17,6 +17,9 @@ spec:
                
       - name: postgres
         image: postgres
+        volumeMounts:
+          - mountPath: /var/lib/postgresql/data
+            name: ekartdb
         env:
         - name: POSTGRES_USER
           value: postgres    
@@ -26,3 +29,5 @@ spec:
           value: postgres
         ports:
         - containerPort: 5432
+      volumes:
+        - name: ekartdb
