@@ -13,7 +13,6 @@ env:
     DEPLOYMENT_MANIFEST_PATH: |
         ./ekart-deploy.yaml
         ./ekart-deployDB.yaml
-        ./ekart-k8s.yaml
         ./ekart-service.yaml
         ./ekart-servicedb.yaml
 jobs:
