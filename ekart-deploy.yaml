@@ -17,7 +17,7 @@ spec:
       - name: ekart
         image: sajlabrap.azurecr.io/ekart:latest
         volumeMounts:
-          - mountPath: /app
+          - mountPath: /app/media
             name: ekart
         env:
         - name: POSTGRES_NAME
