@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ekart-app-nodeport
+  name: ekart-app-lb
 spec:
-  type: NodePort 
+  type: LoadBalancer 
   selector:
     app: ekart-bakend
   ports:
-  - port: 3000
+  - port: 80
     targetPort: 8000
-    nodePort: 30001
+    
