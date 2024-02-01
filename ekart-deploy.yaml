@@ -29,7 +29,7 @@ spec:
         - name: DJANGO_SUPERUSER_PASSWORD
           value: password
         - name: POSTGRES_HOST
-          value: ekart-db
+          value: ekart-db-lb
         ports:
         - containerPort: 8000
       volumes:
