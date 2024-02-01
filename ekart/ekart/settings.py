@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-c&tby8--%8#7kc$5_eu!qlg9@@edil!8c)s4p3#^w7sfd6a6#0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lab-kart.azurewebsites.net','127.0.0.1','0.0.0.0']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
