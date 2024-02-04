@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: ekart-bakend
-  replicas: 5
+  replicas: 3
   template:
     metadata:
       labels:
