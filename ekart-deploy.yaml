@@ -32,5 +32,9 @@ spec:
           value: ekart-db-lb
         ports:
         - containerPort: 8000
+        resources:
+          limits:
+            cpu: '250m'
+            memory: '64Mi'
       volumes:
         - name: ekart    
