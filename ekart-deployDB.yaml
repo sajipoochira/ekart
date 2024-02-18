@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: ekart-db
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
@@ -38,5 +38,6 @@ spec:
             
       volumes:
         - name: ekartdb
+          
 
 
