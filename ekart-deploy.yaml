@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ekart-app
-  
+
 spec:
   selector:
     matchLabels:
@@ -14,27 +14,28 @@ spec:
         app: ekart-bakend
     spec:
       containers:
-      - name: ekart
-        image: sajlabrap.azurecr.io/ekart:latest
-        volumeMounts:
-          - mountPath: /app/media
-            name: ekart
-        env:
-        - name: POSTGRES_NAME
-          value: postgres
-        - name: POSTGRES_USER
-          value: postgres
-        - name: POSTGRES_PASSWORD
-          value: postgres
-        - name: DJANGO_SUPERUSER_PASSWORD
-          value: password
-        - name: POSTGRES_HOST
-          value: ekart-db-lb
-        ports:
-        - containerPort: 8000
-        resources:
-          limits:
-            cpu: '250m'
-            memory: '64Mi'
+        - name: ekart
+          image: sajlabrap.azurecr.io/ekart:latest
+          volumeMounts:
+            - mountPath: /app/media
+              name: ekart
+          env:
+            - name: POSTGRES_NAME
+              value: postgres
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: DJANGO_SUPERUSER_PASSWORD
+              value: password
+            - name: POSTGRES_HOST
+              value: ekart-db-lb
+          ports:
+            - containerPort: 8000
+          resources:
+            limits:
+              cpu: "250m"
+              memory: "64Mi"
+
       volumes:
-        - name: ekart    
+        - name: ekart
